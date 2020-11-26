@@ -9,3 +9,13 @@ class HotelModel(banco.Model):
     estrelas = banco.Column(banco.Float(precision=1))
     diaria = banco.Column(banco.Float(precision=2))
     cidade = banco.Column(banco.String(40))
+
+    def serialize(self):
+        return {
+            'id': self.hotel_id,
+            'street': self.nome,
+            'number': self.estrelas,
+            'complement': self.diaria,
+            'neighborhood': self.cidade,
+        }
+

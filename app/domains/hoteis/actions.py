@@ -1,9 +1,9 @@
-from sql_alchemy import save
 from app.domains.hoteis.model import HotelModel
+from sql_alchemy import save
 
 
 def get():
-    return HotelModel.query.filter_by(deleted_at=None)
+    return HotelModel.query.all()
 
 
 def create(data: dict):
